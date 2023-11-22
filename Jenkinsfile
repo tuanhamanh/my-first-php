@@ -1,11 +1,14 @@
 pipeline {
-   agent any
+   agent {
+           docker { image 'php:8.2-cli' }
+   }
    stages {
         stage('Build') {
             steps {
                 echo "Building.."
                 sh '''
-                    docker --version
+                    cd my-app
+                    php --version
                 '''
             }
         }
