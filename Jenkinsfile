@@ -1,10 +1,8 @@
 pipeline {
-    agent {
-        node {
-            docker { image 'php:8.0.20RC1-fpm-alpine3.16' }
-            }
-      }
-    stages {
+   agent {
+           docker { image 'node:20.9.0-alpine3.18' }
+   }
+   stages {
         stage('Build') {
             steps {
                 echo "Building.."
